@@ -32,5 +32,5 @@ volumes:
   pgdata:
 
 
-// Run the following command to start the services
-docker-compose up -d
+# Run the following command to start the services
+# docker-compose up -d
