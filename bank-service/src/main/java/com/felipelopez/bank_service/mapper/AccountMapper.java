@@ -1,6 +1,7 @@
 package com.felipelopez.bank_service.mapper;
 
 import com.felipelopez.bank_service.model.dto.AccountRequestDTO;
+import com.felipelopez.bank_service.model.dto.AccountResponseDTO;
 import com.felipelopez.bank_service.model.entity.Account;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -18,11 +19,11 @@ public class AccountMapper {
         return modelMapper.map(accountRequestDTO, Account.class);
     }
 
-    public AccountRequestDTO convertToDTO(Account account) {
-        return modelMapper.map(account, AccountRequestDTO.class);
+    public AccountResponseDTO convertToDTO(Account account) {
+        return modelMapper.map(account, AccountResponseDTO.class);
     }
 
-    public List<AccountRequestDTO> convertToDTO(List<Account> accounts) {
+    public List<AccountResponseDTO> convertToListDTO(List<Account> accounts) {
 
         return accounts.stream()
                 .map(this::convertToDTO)
